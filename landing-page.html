@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Cuándo Puedes Dejar Tu Trabajo? Descúbrelo Aquí</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* VARIABLES */
+        :root {
+            --primary: #0EA5E9;
+            --secondary: #38BDF8;
+            --cta: #F97316;
+            --bg: #F0F9FF;
+            --text: #0C4A6E;
+            --text-muted: #6B7280;
+            --text-light: #9CA3AF;
+            --border: #E5E7EB;
+            --success: #10B981;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        /* HEADER */
+        header {
+            background: var(--text);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(12, 74, 110, 0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 0.5px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HERO - STEP 1: PROBLEMA */
+        .hero {
+            background: linear-gradient(135deg, var(--text) 0%, #1e3a5f 100%);
+            color: var(--white);
+            padding: 120px 20px;
+            text-align: center;
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        /* CTA BUTTON */
+        .cta-button {
+            background: var(--cta);
+            color: var(--white);
+            padding: 16px 40px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 200ms ease-out;
+            box-shadow: 0 4px 20px rgba(249, 115, 22, 0.3);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(249, 115, 22, 0.4);
+        }
+
+        .cta-button:active {
+            transform: scale(0.98);
+        }
+
+        /* SECTION STYLES */
+        section {
+            padding: 100px 20px;
+        }
+
+        section.light {
+            background: var(--bg);
+        }
+
+        section h2 {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 60px;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        /* PAIN GRID - STEP 1 DEEP DIVE */
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+
+        .pain-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(12, 74, 110, 0.08);
+            border-left: 5px solid var(--primary);
+            transition: all 200ms ease-out;
+            cursor: pointer;
+        }
+
+        .pain-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 24px rgba(12, 74, 110, 0.12);
+            border-left-color: var(--cta);
+        }
+
+        .pain-card .emoji {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .pain-card h3 {
+            color: var(--text);
+            font-size: 20px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .pain-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* REFLECTION BOX */
+        .reflection {
+            background: var(--white);
+            padding: 60px 50px;
+            border-radius: 8px;
+            border-left: 6px solid var(--cta);
+            text-align: center;
+            margin: 60px 0;
+            box-shadow: 0 4px 20px rgba(249, 115, 22, 0.1);
+        }
+
+        .reflection h3 {
+            color: var(--text);
+            font-size: 32px;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .reflection p {
+            color: var(--text-muted);
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .reflection strong {
+            color: var(--cta);
+            font-weight: 600;
+        }
+
+        /* COMPARISON - STEP 2: SOLUCIÓN */
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin: 60px 0;
+        }
+
+        .comparison-side {
+            padding: 50px;
+            border-radius: 8px;
+        }
+
+        .comparison-side.before {
+            background: #FEE2E2;
+            border-left: 6px solid #DC2626;
+        }
+
+        .comparison-side.after {
+            background: #ECFDF5;
+            border-left: 6px solid var(--success);
+        }
+
+        .comparison-side h4 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .comparison-side ul {
+            list-style: none;
+        }
+
+        .comparison-side li {
+            font-size: 15px;
+            margin-bottom: 16px;
+            padding-left: 0;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
+
+        .comparison-side.before li:before {
+            content: "✗ ";
+            color: #DC2626;
+            font-weight: 700;
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        .comparison-side.after li:before {
+            content: "✓ ";
+            color: var(--success);
+            font-weight: 700;
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        /* STATS */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 30px;
+            background: var(--white);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            transition: all 200ms ease-out;
+        }
+
+        .stat:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 16px rgba(14, 165, 233, 0.1);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--cta);
+            margin-bottom: 10px;
+        }
+
+        .stat p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* BIG QUESTIONS */
+        .big-question {
+            background: var(--white);
+            padding: 60px 50px;
+            border-radius: 8px;
+            border: 3px solid var(--primary);
+            text-align: center;
+            margin: 60px 0;
+            box-shadow: 0 4px 20px rgba(14, 165, 233, 0.1);
+        }
+
+        .big-question p {
+            font-size: 22px;
+            color: var(--text);
+            line-height: 1.8;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .big-question strong {
+            color: var(--cta);
+            font-weight: 600;
+        }
+
+        /* CTA SECTION - STEP 3: ACCIÓN */
+        .cta-section {
+            background: linear-gradient(135deg, var(--text) 0%, #1e3a5f 100%);
+            color: var(--white);
+            padding: 120px 20px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+            font-size: 52px;
+            margin-bottom: 25px;
+        }
+
+        .cta-section p {
+            font-size: 20px;
+            margin-bottom: 50px;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .cta-subtext {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-top: 25px;
+            font-weight: 500;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #051D2F;
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        footer a {
+            color: var(--secondary);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 200ms ease-out;
+        }
+
+        footer a:hover {
+            color: var(--primary);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section h2 {
+                font-size: 36px;
+                margin-bottom: 40px;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .comparison-side {
+                padding: 30px;
+            }
+
+            .pain-grid {
+                gap: 20px;
+            }
+
+            .cta-section h2 {
+                font-size: 36px;
+            }
+
+            .reflection h3 {
+                font-size: 24px;
+            }
+
+            .cta-button {
+                padding: 14px 32px;
+                font-size: 15px;
+            }
+        }
+
+        /* UTILITY */
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ACCESSIBILITY */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="logo">InmoMatch</div>
+        </div>
+    </header>
+
+    <!-- HERO: STEP 1 - PROBLEMA -->
+    <section class="hero">
+        <div class="container">
+            <h1>¿Cuántos Años Más De Esto?</h1>
+            <p>Trabajas 40 horas/semana. Ganas lo mismo cada mes. Tu jefe controla tu vida. Hay un sueño guardado pero nunca tienes tiempo para vivirlo.</p>
+            <button class="cta-button" onclick="scrollToCalculadora()">Descubre Cuándo Puedes Irte →</button>
+        </div>
+    </section>
+
+    <!-- STEP 1 DEEP DIVE: EL DOLOR -->
+    <section id="problema">
+        <div class="container">
+            <h2>La Vida Que Estás Viviendo Ahora</h2>
+
+            <div class="pain-grid">
+                <div class="pain-card fade-in">
+                    <span class="emoji">⏰</span>
+                    <h3>No Controlas Tu Tiempo</h3>
+                    <p>40 horas/semana. Tu jefe decide. No puedes ir al dentista sin permiso. Tu tiempo es suyo.</p>
+                </div>
+
+                <div class="pain-card fade-in">
+                    <span class="emoji">💼</span>
+                    <h3>El Mismo Sueldo</h3>
+                    <p>€1,800... €1,800... €1,800. Trabajas igual, trabajas mejor, trabajas peor. Nunca cambia.</p>
+                </div>
+
+                <div class="pain-card fade-in">
+                    <span class="emoji">😔</span>
+                    <h3>Vacaciones Limitadas</h3>
+                    <p>22 días al año. El resto: oficina. ¿Así hasta los 65? Es hora de replantear esto.</p>
+                </div>
+
+                <div class="pain-card fade-in">
+                    <span class="emoji">🔗</span>
+                    <h3>Atrapado</h3>
+                    <p>Necesitas el sueldo. No puedes parar. Cada año que pasa es un año menos de vida.</p>
+                </div>
+
+                <div class="pain-card fade-in">
+                    <span class="emoji">😰</span>
+                    <h3>Estrés Permanente</h3>
+                    <p>Domingo: ansiedad. Lunes: depresión. Martes a viernes: resignación. Infinito.</p>
+                </div>
+
+                <div class="pain-card fade-in">
+                    <span class="emoji">🌍</span>
+                    <h3>Sin Libertad</h3>
+                    <p>Querías vivir en Barcelona... Lisboa... Berlín. El trabajo te encadena a una silla.</p>
+                </div>
+            </div>
+
+            <div class="reflection">
+                <h3>La Pregunta Incómoda</h3>
+                <p>Si nada cambia en los próximos 6 meses,</p>
+                <p><strong>¿En qué estarás en 5 años?</strong></p>
+                <p>Probablemente: Mismo trabajo, mismo sueldo, más años perdidos, menos opciones.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- STEP 2: SOLUCIÓN -->
+    <section class="light">
+        <div class="container">
+            <h2>Dos Caminos Posibles</h2>
+
+            <div class="comparison">
+                <div class="comparison-side before">
+                    <h4>HACES NADA</h4>
+                    <ul>
+                        <li>Sigues en el mismo trabajo</li>
+                        <li>Mismo sueldo (€1,800-€2,500)</li>
+                        <li>40h/semana indefinidamente</li>
+                        <li>Mismo estrés (domingo a viernes)</li>
+                        <li>Mismas 22 vacaciones</li>
+                        <li>Sin libertad geográfica</li>
+                        <li>Más viejo, menos opciones</li>
+                    </ul>
+                </div>
+
+                <div class="comparison-side after">
+                    <h4>HACES UN CAMBIO</h4>
+                    <ul>
+                        <li>Trabajas 6h/semana en algo tuyo</li>
+                        <li>Ingresos extra €8k-€30k/mes</li>
+                        <li>Tiempo es tuyo (no jefe)</li>
+                        <li>Estrés: CERO (es tu proyecto)</li>
+                        <li>Viaja cuando quieras, donde quieras</li>
+                        <li>Libertad geográfica total</li>
+                        <li>En 6 meses: LIBERTAD</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="big-question">
+                <p>¿Cuál es tu realidad en 6 meses?</p>
+                <p><strong>Depende de lo que hagas hoy.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section>
+        <div class="container">
+            <h2>Datos Que Te Harán Pensar</h2>
+
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">73%</div>
+                    <p>de los empleados quiere dejar su trabajo</p>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">8.35%</div>
+                    <p>crecimiento anual del mercado inmobiliario LATAM</p>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">€3,380</div>
+                    <p>es lo que necesitas en 6 meses para ser libre</p>
+                </div>
+            </div>
+
+            <div class="big-question">
+                <p><strong>La pregunta es:</strong></p>
+                <p>¿Serás el 27% que nunca hace nada?</p>
+                <p>¿O el 73% que al menos INTENTA cambiar?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- STEP 3: ACCIÓN / CTA FINAL -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>¿Cuándo Puedes Dejar Tu Trabajo?</h2>
+            <p>Responde 13 preguntas simples. Descubre exactamente cuándo puedes ser libre.</p>
+            <p style="font-size: 16px; margin-bottom: 40px; opacity: 0.9;">
+                Toma 5 minutos. Resulta gratis. Sin spam. Resultados personalizados para TI.
+            </p>
+            <button class="cta-button" onclick="scrollToCalculadora()">Haz La Calculadora →</button>
+            <p class="cta-subtext">No es clickbait. Es matemática pura.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 InmoMatch. La vida que mereces está esperando.</p>
+        <p>
+            <a href="mailto:ayudaicorbeauty@gmail.com">Contacto</a>
+            <a href="#">Privacidad</a>
+            <a href="#">Términos</a>
+        </p>
+    </footer>
+
+    <script>
+        // ============================================
+        // CONFIGURACIÓN DEL TYPEFORM
+        // ============================================
+        // INSTRUCCIONES:
+        // 1. Ve a typeform-calculadora-setup.md
+        // 2. Crea el formulario en https://typeform.com
+        // 3. Copia el URL compartible del Typeform
+        // 4. Pega el URL en la línea de abajo
+        // ============================================
+
+        const CONFIG = {
+            typeformURL: "https://tu-typeform-aqui.typeform.com/to/xxxxx" // ← ACTUALIZA ESTE LINK
+        };
+
+        function scrollToCalculadora() {
+            // Si aún no has puesto el link, mostrar instrucciones
+            if (CONFIG.typeformURL.includes("tu-typeform-aqui")) {
+                alert('🧮 CALCULADORA DEL ESCAPE\n\nPaso 1: Crea tu formulario en typeform.com\nPaso 2: Copia el URL compartible\nPaso 3: Actualiza CONFIG.typeformURL en el código\n\nVe a typeform-calculadora-setup.md para instrucciones completas.');
+                return;
+            }
+
+            // Abre el Typeform en ventana nueva
+            window.open(CONFIG.typeformURL, '_blank');
+        }
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.pain-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
